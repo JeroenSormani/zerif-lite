@@ -56,11 +56,11 @@ get_header(); ?>
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
 
-							_e( 'Galleries', 'zerif-lite');
+							_e( 'Galleries', 'zerif-lite' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
 
-							_e( 'Images', 'zerif-lite');
+							_e( 'Images', 'zerif-lite' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
 
@@ -119,19 +119,18 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-
 					 */
 
 					get_template_part( 'content', 'archive-download' );
 
-				endwhile;  
-				
-				zerif_paging_nav(); 
-				
-			else:
-			
+				endwhile;
+
+				zerif_paging_nav();
+
+			else :
+
 				get_template_part( 'content', 'none' );
-				
+
 			endif; ?>
 
 		</main><!-- #main -->
@@ -142,4 +141,4 @@ get_header(); ?>
 
 </div><!-- .container -->
 
-<?php get_footer(); ?>
+<?php get_footer();
