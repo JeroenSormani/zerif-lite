@@ -29,9 +29,9 @@ get_header(); ?>
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							_e( 'Asides', 'zerif-lite' );
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'zerif-lite');
+							_e( 'Galleries', 'zerif-lite' );
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'zerif-lite');
+							_e( 'Images', 'zerif-lite' );
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
 							_e( 'Videos', 'zerif-lite' );
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
@@ -46,7 +46,7 @@ get_header(); ?>
 							_e( 'Chats', 'zerif-lite' );
 						else :
 							_e( 'Archives', 'zerif-lite' );
-						endif;
+						endif; 
 					?>
 				</h1>
 				<?php
@@ -54,16 +54,15 @@ get_header(); ?>
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
 						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
+					endif; 
 				?>
 			</header><!-- .page-header -->
 			<?php while ( have_posts() ) : the_post();
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.					 */
 					get_template_part( 'content', get_post_format() );
-				endwhile;  								zerif_paging_nav(); 							else:							get_template_part( 'content', 'none' );							endif; ?>
+				endwhile;  								zerif_paging_nav(); 							else :							get_template_part( 'content', 'none' );							endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- .content-left-wrap -->
@@ -71,4 +70,4 @@ get_header(); ?>
 	<?php get_sidebar(); ?>
 </div><!-- .sidebar-wrap -->
 </div><!-- .container -->
-<?php get_footer(); ?>
+<?php get_footer();
