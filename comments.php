@@ -9,7 +9,7 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'zerif-lite' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' ); 
 			?>
 		</h2>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ul',
 					'short_ping' => true,
-				) );
+				) ); 
 			?>
 		</ul><!-- .comment-list -->
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
@@ -41,5 +41,5 @@ if ( post_password_required() ) {
 	?>
 			<p class="no-comments"><?php _e( 'Comments are closed.', 'zerif-lite' ); ?></p>
 	<?php endif; ?>
-	<?php comment_form(array('comment_notes_after' => '')); ?>
+	<?php comment_form( array( 'comment_notes_after' => '' ) ); ?>
 </div><!-- #comments -->
