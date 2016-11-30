@@ -16,9 +16,9 @@ get_header(); ?>
 
 				<main id="main" class="site-main" role="main">
 
-				<?php 
+				<?php
 					if ( have_posts() ) :
-				
+
 						while ( have_posts() ) : the_post();
 
 							/* Include the Post-Format-specific template for the content.
@@ -29,13 +29,13 @@ get_header(); ?>
 							get_template_part( 'content', get_post_format() );
 
 						endwhile;
-						
+
 						zerif_paging_nav();
-						
+
 					else :
-					
+
 						get_template_part( 'content', 'none' );
-						
+
 					endif; ?>
 
 				</main><!-- #main -->
@@ -52,4 +52,4 @@ get_header(); ?>
 
 	</div><!-- .container -->
 
-<?php get_footer(); ?>
+<?php get_footer();
