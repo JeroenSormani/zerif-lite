@@ -9,7 +9,7 @@
 		<div class="edd_download_image">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
-				<?php 
+				<?php
 					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 					the_post_thumbnail();
 					}
@@ -22,5 +22,5 @@
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-content -->
 		<?php echo edd_get_purchase_link( array( 'download_id' => get_the_ID() ) ); ?>
-	</div>	
+	</div>
 </div><!-- #post-## -->
