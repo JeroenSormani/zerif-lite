@@ -2,13 +2,13 @@
 
 	<?php if ( ! is_search() ) : ?>
 
-		<?php if ( has_post_thumbnail()) : ?>
+		<?php if ( has_post_thumbnail() ) : ?>
 
 		<div class="post-img-wrap">
 
 			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
-				<?php the_post_thumbnail("post-thumbnail"); ?>
+				<?php the_post_thumbnail( 'post-thumbnail' ); ?>
 
 				</a>
 
@@ -16,13 +16,13 @@
 
 		<div class="listpost-content-wrap">
 
-		<?php else: ?>
+		<?php else : ?>
 
 		<div class="listpost-content-wrap-full">
 
 		<?php endif; ?>
 
-	<?php else:  ?>
+	<?php else :  ?>
 
 			<div class="listpost-content-wrap-full">
 
@@ -51,20 +51,20 @@
 	<div class="entry-summary">
 
 		<?php the_excerpt(); ?>
-		
+
 	<?php else : ?>
 
 	<div class="entry-content">
 
-		<?php 
-			$ismore = @strpos( $post->post_content, '<!--more-->');
+		<?php
+			$ismore = @strpos( $post->post_content, '<!--more-->' );
 
-			if($ismore) {
-				the_content( sprintf( esc_html__('[...]','zerif-lite'), '<span class="screen-reader-text">'.esc_html__('about ', 'zerif-lite').get_the_title().'</span>' ) );
+			if ( $ismore ) {
+				the_content( sprintf( esc_html__( '[...]', 'zerif-lite' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'zerif-lite' ) . get_the_title() . '</span>' ) );
 			} else {
 				the_excerpt();
 			}
-			
+
 			wp_link_pages( array(
 
 				'before' => '<div class="page-links">' . __( 'Pages:', 'zerif-lite' ),
